@@ -1,11 +1,15 @@
-//Inspirtaional space quotes that will be used on this project.
-let spaceQuotes = ["That's one small step for a man, one giant leap for mankind.", "The stars don't look bigger, but they do look brighter.",
-"The Universe is under no obligation to make sense to you."];
+//Arrays that stores adjectives, nouns and verbs to create a random joke
+let adjective = ["Short","chubby","lazy", "Stumpy"]
+let noun = ["Girl","Cat","Corgi"];
+let verb = ["Jump", "Run", "Fetch"];
 
-//Function that displays different messages everytime it's run
-let mixedMessages = Array => {
-    const messages = Math.floor(Math.random() * Array.length)
-    return Array[messages]
+//Function that displays different jokes everytime it's run
+let mixedMessages = (adj, noun, verb) => {
+   const randomAdjective = Math.floor(Math.random() * adj.length)
+   const randomNoun = Math.floor(Math.random() * noun.length)
+   const randomVerb = Math.floor(Math.random() * verb.length)
+
+   console.log(`The ${noun[randomNoun]} is trying to ${verb[randomVerb]} but it's too ${adj[randomAdjective]} to do so.`)
 };
 
-console.log(mixedMessages(spaceQuotes));node
+mixedMessages(adjective, noun, verb);
